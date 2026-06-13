@@ -8,7 +8,7 @@
 
 # Linux Commands
 
-### Hush SSH Login
+### Hush SSH Login Message
 ```bash
 touch ~/.hushlogin
 ```
