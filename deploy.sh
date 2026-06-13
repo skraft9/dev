@@ -18,7 +18,7 @@ echo "[*] Pushing $FILE_NAME to $REMOTE_HOST..."
 scp -q "$LOCAL_FILE_PATH" "$REMOTE_USER@$REMOTE_HOST:/tmp/$FILE_NAME"
 
 echo "[*] Injecting $FILE_NAME into $CONTAINER..."
-# Push patches to Docker on REMOTE_HOST via SSH. Then apply patch to Docker.
+# Push patches to Docker on REMOTE_HOST via SSH. Then applies the patch to the Docker container running.
 ssh -q "$REMOTE_USER@$REMOTE_HOST" << EOF
     sudo docker cp /tmp/$FILE_NAME $CONTAINER:/var/www/MISP/$RELATIVE_PATH
     sudo docker exec -u root $CONTAINER chown www-data:www-data /var/www/MISP/$RELATIVE_PATH
